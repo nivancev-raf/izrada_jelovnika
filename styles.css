@@ -1,0 +1,346 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hero-section {
+    height: 100vh;
+    /* background: url('slike/background.jpg') no-repeat center center/cover; */
+    width: 100%;
+    background-image: linear-gradient(rgba(81, 85, 98, 0.7), rgba(4, 9, 30, 0.7)), url(slike/background.jpg); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 90%;
+    position: absolute;
+    top: 0;
+}
+
+.logo img {
+    width: 40%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative; /* Position relative to contain the pseudo-element */
+    padding-bottom: 5px; /* Adds spacing for the underline effect */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d84e2f; /* Customize the color of the underline */
+    transition: width 0.4s ease; /* Smooth transition for the hover effect */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expands the line to full width on hover */
+}
+
+
+
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+    /* font-family: ; */
+    font-weight: bold;
+}
+
+.hero-content p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+
+
+/* services */
+
+
+.service-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    /* background: url('slike/kuhinjaa.jpg') no-repeat center center/cover; Set your desired background image */
+    background-image: linear-gradient(rgba(175, 177, 180, 0.7), rgba(0, 0, 0, 0.7)), url(slike/kuhinjaa.jpg); 
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.circle-content {
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Align text to the left for better readability */
+    padding: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle-content p {
+    font-size: 2em;
+    font-weight: bold;
+    color: #d84e2f; /* Title color */
+    margin-bottom: 20px;
+    
+}
+
+.circle-list {
+    list-style: disc; /* Adds bullet points to the list */
+    padding-left: 65px; /* Indent the list slightly for better alignment */
+    margin: 0;
+    font-size: 1.3em; /* Increase font size for readability */
+    font-weight: bold;
+    line-height: 1.8; /* Add space between lines */
+    color: #333; /* Text color */
+}
+
+.circle-list li {
+    margin-bottom: 10px; /* Adds space between each service */
+}
+
+.circle-content:hover {
+    transform: translateY(-5px) scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.content-section {
+    padding: 20px;
+    background-image: linear-gradient(rgba(45, 46, 48, 0.7), rgba(207, 209, 214, 0.7)), url(slike/image.jpg);
+}
+
+.heading-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d84e2f; /* Box background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the box */
+    margin: 20px auto; /* Center the box horizontally and add space above and below */
+    max-width: 350px; /* Set a maximum width */
+}
+
+.heading-box h1 {
+    font-size: 3em; /* Reduced font size */
+    color: #fff; /* Text color inside the box */
+    margin: 0; /* Remove default margin */
+    text-align: center;
+}
+
+.content-flex {
+    display: flex;
+    gap: 10px;
+}
+
+.cards-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 40px;
+}
+
+.card {
+    background-color: #f7f7f7;
+    padding: 9px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #d84e2f;
+}
+
+.card li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.card ul,
+.card ol {
+    padding-left: 20px;
+    font-size: large;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.image-container img {
+    max-width: 100%;
+    padding-top: 40px;
+    height: 660px;
+    border-radius: 10px;
+}
+
+.image-container img:hover {
+    transform: translateY(-5px) scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-container {
+        width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+
+/* footer */
+
+.footer-section {
+    background-color: #2e2e2e;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.footer-left {
+    display: flex; /* Display logo and contact side by side */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between logo and contact */
+}
+
+.footer-contact {
+    flex: 1;
+    margin-left: 100px; /* Space between contact and about */
+}
+
+.footer-logo {
+    max-width: 200px; /* Adjust the size of the logo */
+    margin-right: 60px; /* Space between the logo and contact text */
+    margin-left: -100px; /* Adjust this value to move the logo left */
+}
+
+.footer-contact h2, .footer-about h2 {
+    font-size: 2em;
+    color: #d84e2f;
+    margin-bottom: 10px;
+}
+
+.footer-contact p, .footer-about p {
+    font-size: 1.3em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #d84e2f;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-about {
+    flex: 1;
+    margin-left: 200px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+}
