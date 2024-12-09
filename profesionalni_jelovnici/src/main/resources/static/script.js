@@ -47,3 +47,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var formData = {
+            name: this.name.value,
+            email: this.email.value,
+            subject: this.subject.value,
+            message: this.message.value
+        };
+        console.log('Form data:', formData);
+
+//http://localhost:8081/notifications/sendEmail
+
+        // fetch('https://website-interior-design.onrender.com/notifications/sendEmail', {
+        fetch('http://localhost:8081/notifications/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Handle success here (e.g., showing a success message)
+                // clear the form
+                this.reset();
+
+                // show a success message
+                alert('Email je uspešno poslat!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Handle errors here (e.g., showing an error message)
+            });
+    });
+});
