@@ -1111,6 +1111,163 @@ body {
 
 
 
+/* Contact section base styles */
+.contact-section {
+    padding: 60px 20px;
+    background-image: linear-gradient(rgba(45, 46, 48, 0.7), rgba(207, 209, 214, 0.7)), url(slike/kujna.jpg);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 100vh;
+    }
+
+    .contact-section {
+        padding: 30px 15px;
+    }
+    
+    .contact-container {
+        padding: 20px;
+    }
+    
+    /* Contact Info adjustments */
+    .contact-info {
+        padding: 20px;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    
+    .info-item {
+        padding: 15px;
+        margin-bottom: 20px;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .info-icon {
+        width: 48px;
+        height: 48px;
+        margin-right: 15px;
+    }
+    
+    .info-content h3 {
+        font-size: 1.1em;
+    }
+    
+    .info-content p {
+        font-size: 1em;
+    }
+    
+    /* Form adjustments */
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .contact-form h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        font-size: 1em;
+        margin-bottom: 6px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 1em;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 15px;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 15px;
+    }
+    
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 1.6em;
+    }
+    
+    .info-item {
+        padding: 12px;
+    }
+    
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+    
+    .info-content h3 {
+        font-size: 1em;
+    }
+    
+    .info-content p {
+        font-size: 0.9em;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+    }
+}
+
+/* Additional adjustments for Samsung Galaxy and similar devices */
+@media screen and (max-width: 740px) {
+    .contact-container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .info-content p {
+        word-break: break-word; /* For email address */
+    }
+    
+    .form-group textarea {
+        height: 120px; /* Shorter textarea on mobile */
+    }
+}
+
 
 
 
