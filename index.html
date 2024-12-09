@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Restaurant Menus</title>
+    <title>Profesionalni Jelovnici</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,16 +13,31 @@
             <div class="logo">
                 <img src="slike/image-removebg-preview.png" alt="Logo"> 
             </div>
+            <!-- Hamburger Menu Button -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#">Početna</a></li>
-                <li><a href="#">Usluge</a></li>
-                <li><a href="#">Galerija</a></li>
-                <li><a href="#">O Nama</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="onama.html">O Nama</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="onama.html">O Nama</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="overlay"></div>
+        
         <div class="hero-content">
-            <!-- <h1>Profesionalni Jelovnici</h1> -->
             <h1>PROFESIONALNI JELOVNICI</h1>
             <p>Poboljšajte svoje menije uz naše iskustvo.</p>
         </div>
@@ -69,7 +84,7 @@
                 </div>
                 <div class="card">
                     <h3>Misija</h3>
-                    <p>Naša je misija da svakome ponudimo bolji obrok od prethodnog kao i da zagolicamo Vašu maštu novim i zanimljivim ukusima.</p>
+                    <p>Naša je misija da svakome ponudimo bolji obrok od prethodnog <br>kao i da zagolicamo Vašu maštu novim i zanimljivim ukusima.</p>
                 </div>
             </div>
             <div class="image-container">
@@ -84,9 +99,9 @@
                 <img src="slike/logo.png" alt="Logo" class="footer-logo">
                 <div class="footer-contact">
                     <h2>Kontakt</h2>
-                    <p>Kontaktirajte nas putem telefona - <strong>0655311655</strong></p>
+                    <p>Kontaktirajte nas putem telefona - <strong>+381655311655</strong></p>
                     <p>ili email adrese <a href="mailto:profesionalnijelovnici@gmail.com">profesionalnijelovnici@gmail.com</a></p>
-                    <p>I otpocnimo ukusnu i zabavnu avanturu.</p>
+                    <p>I otpočnimo ukusnu i zabavnu avanturu.</p>
                 </div>
             </div>
             <div class="footer-about">
@@ -98,17 +113,7 @@
             <p>&copy; 2024 Profesionalni Jelovnici. Sva prava zadržana.</p>
         </div>
     </footer>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    <!-- Add other sections like Menu, Gallery, About Us, Contact -->
     <script src="script.js"></script>
+    
 </body>
 </html>

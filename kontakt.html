@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Profesionalni Jelovnici</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero-section contact-hero">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="slike/image-removebg-preview.png" alt="Logo">
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="onama.html">O Nama</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="onama.html">O Nama</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>KONTAKT</h1>
+            <p>Započnite vašu kulinarsku avanturu sa nama</p>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Kontaktirajte Nas</h2>
+                <p>Spremni smo da odgovorimo na sva vaša pitanja i pomognemo vam u unapređenju vašeg poslovanja.</p>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <img src="icons/phone.png" alt="Telefon ikona">
+                    </div>
+                    <div class="info-content">
+                        <h3>Telefon</h3>
+                        <p>+381655311655</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <img src="icons/email.png" alt="Email ikona">
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>profesionalnijelovnici@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <img src="icons/clock.png" alt="Radno vreme ikona">
+                    </div>
+                    <div class="info-content">
+                        <h3>Radno Vreme</h3>
+                        <p>Ponedeljak - Petak: 09:00 - 17:00</p>
+                        <p>Subota: 09:00 - 14:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Pošaljite Poruku</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ime i Prezime</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Naslov</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Pošalji Poruku</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="slike/logo.png" alt="Logo" class="footer-logo">
+                <div class="footer-contact">
+                    <h2>Kontakt</h2>
+                    <p>Kontaktirajte nas putem telefona - <strong>+381655311655</strong></p>
+                    <p>ili email adrese <a href="mailto:profesionalnijelovnici@gmail.com">profesionalnijelovnici@gmail.com</a></p>
+                    <p>I otpočnimo ukusnu i zabavnu avanturu.</p>
+                </div>
+            </div>
+            <div class="footer-about">
+                <h2>O Nama</h2>
+                <p>Profesionalni Jelovnici je vaš partner u stvaranju unikatnih i kvalitetnih jelovnika koji odgovaraju potrebama vašeg poslovanja. Sa dugogodišnjim iskustvom u ugostiteljstvu, nudimo kompletan servis od izrade jelovnika do obuke zaposlenih, kako bismo unapredili vaš poslovni uspeh.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesionalni Jelovnici. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
