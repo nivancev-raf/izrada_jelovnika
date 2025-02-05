@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import pjelovnici.profesionalni_jelovnici.dto.EmailMessageDto;
 import pjelovnici.profesionalni_jelovnici.service.EmailService;
 
+
 @Service
 public class EmailServiceImpl implements EmailService {
 
@@ -21,11 +22,19 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public void sendEmail(EmailMessageDto emailMessage) {
-        MimeMessage message = emailSender.createMimeMessage(); // MimeMessage object is used to send email with attachments
-        try {
-            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8"); 
+        // Send confirmation email to user
+        sendUserConfirmation(emailMessage);
 
-            helper.setFrom("nivancev02@gmail.com");
+        // Send notification to owner
+        sendOwnerNotification(emailMessage);
+    }
+
+    private void sendUserConfirmation(EmailMessageDto emailMessage) {
+        MimeMessage message = emailSender.createMimeMessage();
+        try {
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            helper.setFrom("profesionalnijelovnici@gmail.com");
             helper.setTo(emailMessage.getEmail());
             helper.setSubject(emailMessage.getSubject());
 
@@ -44,11 +53,78 @@ public class EmailServiceImpl implements EmailService {
                     + "<p>Profesionalni jelovnici</p>"
                     + "</body></html>";
 
-            helper.setText(htmlContent, true); // true indicates HTML
-            // continue with sending the email...
+            helper.setText(htmlContent, true);
+            emailSender.send(message);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendOwnerNotification(EmailMessageDto emailMessage) {
+        MimeMessage message = emailSender.createMimeMessage();
+        try {
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            helper.setFrom("profesionalnijelovnici@gmail.com");
+            helper.setTo("profesionalnijelovnici@gmail.com");
+            helper.setSubject("Nova poruka od: " + emailMessage.getName());
+
+            String htmlContent = "<html><body>"
+                    + "<h2>Nova poruka sa sajta</h2>"
+                    + "<p><b>Od:</b> " + emailMessage.getName() + "</p>"
+                    + "<p><b>Email:</b> " + emailMessage.getEmail() + "</p>"
+                    + "<p><b>Naslov:</b> " + emailMessage.getSubject() + "</p>"
+                    + "<p><b>Poruka:</b></p>"
+                    + "<p>" + emailMessage.getMessage() + "</p>"
+                    + "</body></html>";
+
+            helper.setText(htmlContent, true);
             emailSender.send(message);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
     }
 }
+
+//@Service
+//public class EmailServiceImpl implements EmailService {
+//
+//    private final JavaMailSender emailSender;
+//
+//    public EmailServiceImpl(JavaMailSender emailSender) {
+//        this.emailSender = emailSender;
+//    }
+//
+//    @Override
+//    public void sendEmail(EmailMessageDto emailMessage) {
+//        MimeMessage message = emailSender.createMimeMessage(); // MimeMessage object is used to send email with attachments
+//        try {
+//            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+//
+//            helper.setFrom("profesionalnijelovnici@gmail.com");
+//            helper.setTo(emailMessage.getEmail());
+//            helper.setSubject(emailMessage.getSubject());
+//
+//            String htmlContent = "<html><body>"
+//                    + "<h1 style='color: navy;'>Profesionalni jelovnici</h1>"
+//                    + "<p>Poštovani " + emailMessage.getName() + ",</p>"
+//                    + "<p>Hvala Vam što ste nas kontaktirali. Vaša poruka je uspešno poslata sa sledećim sadržajem: </p>"
+//                    + "<br>"
+//                    + "<h3 style='color: navy;'>" + emailMessage.getSubject() + "</h3>"
+//                    + "<p><b>Name:</b> " + emailMessage.getName() + "</p>"
+//                    + "<p><b>Email:</b> " + emailMessage.getEmail() + "</p>"
+//                    + "<p><b>Message:</b></p><p>" + emailMessage.getMessage() + "</p>"
+//                    + "<p style='color: grey;'>Očekujte odgovor u najkraćem mogućem roku. Hvala!</p>"
+//                    + "<br>"
+//                    + "<p>Srdačan pozdrav,</p>"
+//                    + "<p>Profesionalni jelovnici</p>"
+//                    + "</body></html>";
+//
+//            helper.setText(htmlContent, true); // true indicates HTML
+//            // continue with sending the email...
+//            emailSender.send(message);
+//        } catch (MessagingException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//}

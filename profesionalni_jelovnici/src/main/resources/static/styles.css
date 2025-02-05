@@ -28,22 +28,26 @@ body {
 }
 
 .logo img {
-    width: 40%;
+    width: 150px; /* Fixed width instead of percentage */
+    height: auto;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    position: relative; /* Position relative to contain the pseudo-element */
-    padding-bottom: 5px; /* Adds spacing for the underline effect */
+    font-size: 20px;
+    position: relative;
+    padding-bottom: 5px;
 }
 
 .nav-links a::after {
@@ -54,12 +58,40 @@ body {
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #d84e2f; /* Customize the color of the underline */
-    transition: width 0.4s ease; /* Smooth transition for the hover effect */
+    background-color: #d84e2f;
+    transition: width 0.4s ease;
 }
 
 .nav-links a:hover::after {
-    width: 100%; /* Expands the line to full width on hover */
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 30px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo img {
+        width: 130px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
 }
 
 
@@ -559,9 +591,22 @@ body {
     .services-container {
         grid-template-columns: 1fr;
     }
-    
+
     .service-card {
         margin: 0 10px;
+    }
+}
+@media (min-width: 1200px) {
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services-container .service-card:nth-last-child(2),
+    .services-container .service-card:last-child {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
