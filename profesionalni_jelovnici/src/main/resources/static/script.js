@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 //http://localhost:8081/notifications/sendEmail
 
         // fetch('https://website-interior-design.onrender.com/notifications/sendEmail', {
-        fetch('http://localhost:8081/notifications/sendEmail', {
+        fetch('http://167.172.190.35/notifications/sendEmail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
